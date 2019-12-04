@@ -94,8 +94,8 @@
 {
     "cryptype": 0,  
     "data" : {
-        "eno": "表第一列",          
-        "emsg": "表第二列", 
+        "eno": "",          
+        "emsg": "", 
         "data": [] 
     }
 }

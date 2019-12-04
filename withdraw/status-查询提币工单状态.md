@@ -9,7 +9,7 @@
 |token      |string |md5("appid_salt_userid_timestamp")                     |
 |timestamp  |int    |时间戳,单位秒                                             |
 |coin       |string |币名                                                    |
-|withdrawid |int    |提币ID，提币内部序号                                      |
+|withdrawid |int    |提币订单ID                                               |
 
 ```json
 字段值参考上表
@@ -42,7 +42,7 @@
 |addr                  |string |充值到哪个地址                                                   |
 |amount                |float  |充值数量                                                        |
 |amount_sent           |float  |实际发送的提币数量=(amount-fee_amount)                           |
-|memo                  |string |提币备注，比如用户ID之类的，可以是任意内容，入库，防止SQL注入          |
+|memo                  |string |提币备注，比如用户ID之类的，可以是任意内容                           |
 |status                |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消      |
 |txid                  |string |链上的交易ID                                                   |
 |fee_coin              |string |手续费币种                                                     |
@@ -114,8 +114,8 @@
 {
     "cryptype": 0,  
     "data" : {
-        "eno": "表第一列",          
-        "emsg": "表第二列", 
+        "eno": "",          
+        "emsg": "", 
         "data": [] 
     }
 }

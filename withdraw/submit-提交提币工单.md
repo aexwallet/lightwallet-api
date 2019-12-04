@@ -6,15 +6,15 @@
 | --      |--     | --                                                                |
 |appid    |string |用户身份ID, 一个唯一的随机字符串                                       |   
 |cryptype |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0            | 
-|token    |string |md5("appid_salt_userid_timestamp_addr_memo")                      |
+|token    |string |md5("appid_salt_userid_timestamp")                      |
 |timestamp|int    |时间戳,单位秒                                                        |
 |subuserid|string |调用端子账号，字符串，平台不管其含义                                     |
 |chain    |string |主链                                                                |
 |coin     |string |币名                                                                |
 |addr     |int    |提币目标地址                                                          |
 |amount   |float  |提币数量                                                             |
-|memo     |string |提币备注，比如用户ID之类的，可以是任意内容，入库，防止SQL注入                |
-|sign     |string |提币请求签名, md5("{appid}+{salt}+{userid}+{timestamp}+{addr}+{memo}")|
+|memo     |string |提币备注，比如用户ID之类的，可以是任意内容                                |
+|sign     |string |提币请求签名, md5("appid_salt_userid_timestamp_addr_memo")           |
 
 
 ```json
@@ -34,7 +34,7 @@
         "addr": "",  
         "amount": 10,  
         "memo": "1234",
-        "sign": "fafdafdaf"   
+        "sign": "xxxxxxxx"   
     }
 }
 ```
@@ -53,7 +53,7 @@
 |addr                  |string |充值到哪个地址                                                   |
 |amount                |float  |充值数量                                                        |
 |amount_sent           |float  |实际发送的提币数量=(amount-fee_amount)                           |
-|memo                  |string |提币备注，比如用户ID之类的，可以是任意内容，入库，防止SQL注入          |
+|memo                  |string |提币备注，比如用户ID之类的，可以是任意内容                           |
 |status                |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消      |
 |txid                  |string |链上的交易ID                                                   |
 |fee_coin              |string |手续费币种                                                     |
@@ -131,8 +131,8 @@
 {
     "cryptype": 0,  
     "data" : {
-        "eno": "表第一列",          
-        "emsg": "表第二列", 
+        "eno": "",          
+        "emsg": "", 
         "data": [] 
     }
 }
