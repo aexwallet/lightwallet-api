@@ -88,6 +88,7 @@
 |4      |lack field: cryptype                |
 |5      |lack field: data                    |
 |6      |cryptype is invalid                 |
+|9      |(返回具体错误)                        |
 |1001   |lack field: auth                    |
 |3001   |lack field: token                   |
 |4001   |lack field: pubkey                  |

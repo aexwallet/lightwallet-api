@@ -101,7 +101,6 @@
 |6      |cryptype is invalid                 |
 |7      |(返回具体错误)                        |
 |8      |(返回具体错误)                        |
-|9      |invalid finance id                  |
 |1001   |lack field: auth                    |
 |3001   |lack field: token                   |
 |4001   |lack field: pubkey                  |
