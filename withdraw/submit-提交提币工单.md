@@ -39,6 +39,8 @@
 }
 ```
 
+**注意： 扣减金额是提币数量(amount) + (手续费数量)fee_amount**
+
 **正常响应：**
 
 |参数      |类型   |说明                                                                         |  
@@ -50,9 +52,9 @@
 |subuserid             |string |调用端子账号，字符串，平台不管其含义                                 |
 |chain                 |string |哪条主链上充值进来的                                              |
 |coin                  |string |币名                                                            |
-|addr                  |string |充值到哪个地址                                                   |
-|amount                |float  |充值数量                                                        |
-|amount_sent           |float  |实际发送的提币数量=(amount-fee_amount)                           |
+|addr                  |string |提币到哪个地址                                                   |
+|amount                |float  |提币数量                                                        |
+|amount_sent           |float  |实际发送的提币数量                                                |
 |memo                  |string |提币备注，比如用户ID之类的，可以是任意内容                           |
 |status                |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消      |
 |txid                  |string |链上的交易ID                                                   |
@@ -75,7 +77,7 @@
             "coin": "",         
             "addr": "",     
             "amount": 10,           
-            "amount_sent": 9,       
+            "amount_sent": 10,       
             "memo": "",          
             "status": 0,            
             "txid": "",    
