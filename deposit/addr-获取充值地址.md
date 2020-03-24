@@ -27,7 +27,7 @@
             {
                 "chain": "eth",    
                 "coin": "usdt",    
-                "subuserid": "用户自定义" 
+                "subuserid": "1" 
             }
         ]
     }
@@ -45,7 +45,7 @@
 |coin                  |string |币名                                                            |
 |subuserid             |string |调用端子账号，字符串，平台不管其含义                                 |
 |addr                  |string |充币地址                                                         |
-|needmemo              |int    |0:不需要，1需要，用户充值时填写的memo格式: "userid|subuserid|appid"  |
+|needmemo              |int    |0:不需要，1需要，填写的memo字符串格式: "userid|subuserid|appid"     |
 
 ```json
 字段值参考上表
@@ -108,7 +108,7 @@
     "data" : {
         "eno": "",          
         "emsg": "", 
-        "data": [] 
+        "data": {}
     }
 }
 ```

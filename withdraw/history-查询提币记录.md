@@ -62,21 +62,23 @@
     "data": {
         "eno":  0,  
         "emsg": "", 
-        "data": {
-            "id": 23,               
-            "subuserid": "",  
-            "chain": "",         
-            "coin": "",    
-            "addr": "",     
-            "amount": 10,           
-            "amount_sent": 9,       
-            "memo": "",          
-            "status": 0,            
-            "txid":  "",            
-            "fee_coin": "",         
-            "fee_amount": 0,        
-            "create_time":          
-        }
+        "data": [
+            {
+                "id": 23,               
+                "subuserid": "",  
+                "chain": "",         
+                "coin": "",    
+                "addr": "",     
+                "amount": 10,           
+                "amount_sent": 9,       
+                "memo": "",          
+                "status": 0,            
+                "txid":  "",            
+                "fee_coin": "",         
+                "fee_amount": 0,        
+                "create_time": ""
+            }
+        ]          
     }
 }
 ```
@@ -123,7 +125,7 @@
     "data" : {
         "eno": "",          
         "emsg": "", 
-        "data": [] 
+        "data": {} 
     }
 }
 ```
