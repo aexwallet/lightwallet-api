@@ -8,7 +8,8 @@
 |cryptype |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0 | 
 |token    |string |md5("appid_salt_userid_timestamp")                      |
 |timestamp|int    |时间戳,单位秒                                             |
-|coins    |array  |币名数组，元素为字符串                                     |
+|chain    |string |主链                                                     |
+|coin     |string |币种                                                     |
 
 ```json
 字段值参考上表
@@ -22,7 +23,10 @@
             "timestamp": 0
         },
         "coins": [ 
-            "usdt" 
+            {
+                "chain":"eth",
+                "coin":"usdt"
+            }
         ]
     }
 }
@@ -35,6 +39,7 @@
 |cryptype              |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0    |   
 |eno                   |int    |0是正常，非0对应下面错误返回列表中的错误码                       | 
 |emsg                  |string |eno非0时对应下面错误返回列表中的错误描述                        |
+|chain                 |string |主链                                                      |
 |coin                  |string |币名                                                      |
 |balance               |float  |余额数量                                                   |
 |as_cny                |float  |余额以cnc为单位表示的数量                                    |
@@ -49,6 +54,7 @@
         "emsg": "",
         "data": [
             {
+                "chain":"eth",
                 "coin": "usdt",  
                 "balance": 1,    
                 "as_cny": 7.15,  
