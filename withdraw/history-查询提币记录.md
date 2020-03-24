@@ -9,6 +9,7 @@
 |token    |string |md5("appid_salt_userid_timestamp")                     |
 |timestamp|int    |时间戳,单位秒                                             |
 |subuserid|string |调用端子账号，字符串，平台不管其含义                          |
+|chain    |string |主链                                                    |
 |coin     |string |币名                                                    |
 |fromid   |int    |整数，从哪个充值序号开始，从0开始                           |
 |limit    |int    |最多查询多少条记录，包含fromid这条记录                      |
@@ -25,6 +26,7 @@
             "timestamp": 1574151978    
         },
         "subuserid": "", 
+        "chain": "",      
         "coin": "",      
         "fromid": 12,   
         "limit": 100   
@@ -43,14 +45,20 @@
 |subuserid             |string |调用端子账号，字符串，平台不管其含义                                 |
 |chain                 |string |哪条主链上充值进来的                                              |
 |coin                  |string |币名                                                            |
+|from_addr             |string |发送地址                                                        |
 |addr                  |string |充值到哪个地址                                                   |
 |amount                |float  |充值数量                                                        |
 |amount_sent           |float  |实际发送的提币数量=(amount-fee_amount)                           |
+|sub_balance           |float  |扣减余额数量                                                    |
 |memo                  |string |提币备注，比如用户ID之类的，可以是任意内容                           |
 |status                |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消      |
+|status_desc           |string |提币状态说明                                                    |
 |txid                  |string |链上的交易ID                                                   |
+|attch_id              |int    |附加ID                                                        |
 |fee_coin              |string |手续费币种                                                     |
 |fee_amount            |float  |手续费数量                                                     |
+|miner_coin            |string |矿工费币种                                                     |
+|miner_amount          |float  |矿工费数量                                                     |
 |create_time           |string |订单创建时间                                                   |
 
 

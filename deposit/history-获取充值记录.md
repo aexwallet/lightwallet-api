@@ -9,9 +9,10 @@
 |token    |string |md5("appid_salt_userid_timestamp")                     |
 |timestamp|int    |时间戳,单位秒                                             |
 |subuserid|string |调用端子账号，字符串，平台不管其含义                          |
+|chain    |string |主链                                                    |
 |coin     |string |币名                                                    |
-|fromid   |int    |整数，从哪个充值序号开始，从0开始                           |
-|limit    |int    |最多查询多少条记录，包含fromid这条记录                      |
+|fromid   |int    |整数，从哪个充值序号开始，从0开始                            |
+|limit    |int    |最多查询多少条记录，包含fromid这条记录                       |
 
 ```json
 字段值参考上表
@@ -25,6 +26,7 @@
             "timestamp": 1574151978   
         },
         "subuserid": "", 
+        "chain": "eth",
         "coin": "usdt",  
         "fromid": 0,     
         "limit": 100     
@@ -39,10 +41,11 @@
 |cryptype              |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0         |   
 |eno                   |int    |0是正常，非0对应下面错误返回列表中的错误码                            | 
 |emsg                  |string |eno非0时对应下面错误返回列表中的错误描述                             |
-|coin                  |string |币名                                                            |
 |id                    |int    |内部充值序号                                                     |
 |subuserid             |string |调用端子账号，字符串，平台不管其含义                                 |
 |chain                 |string |哪条主链上充值进来的                                              |
+|coin                  |string |币名                                                            |
+|from_addr             |string |发送地址                                                        |
 |addr                  |string |充值到哪个地址                                                   |
 |txid                  |string |交易ID                                                         |
 |amount                |float  |充值数量                                                        |
