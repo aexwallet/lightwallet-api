@@ -46,10 +46,11 @@
 |chain                 |string |哪条主链上充值进来的                                              |
 |coin                  |string |币名                                                            |
 |from_addr             |string |发送地址                                                        |
-|addr                  |string |充值到哪个地址                                                   |
+|addr                  |string |接收     地址                                                   |
 |txid                  |string |交易ID                                                         |
 |amount                |float  |充值数量                                                        |
 |balance               |float  |充值后余额                                                      |
+|time                  |string |充值时间                                                        |
 
 ```json
 字段值参考上表
