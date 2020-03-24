@@ -64,19 +64,25 @@
         "emsg": "", 
         "data": [
             {
-                "id": 23,               
-                "subuserid": "",  
-                "chain": "",         
-                "coin": "",    
-                "addr": "",     
+                "id": 23,     
+                "subuserid": "1", 
+                "chain": "eth",         
+                "coin": "usdt",  
+                "from_addr":"xxxxxx",       
+                "addr": "xxxxxx",     
                 "amount": 10,           
                 "amount_sent": 9,       
-                "memo": "",          
+                "sub_balance": 9,       
+                "memo": "123",          
                 "status": 0,            
-                "txid":  "",            
-                "fee_coin": "",         
-                "fee_amount": 0,        
-                "create_time": ""
+                "status_desc": "",      
+                "txid": "",                
+                "fee_coin": "",            
+                "fee_amount": 0,          
+                "attch_id": 124,      
+                "miner_coin": "",            
+                "miner_amount": 0,          
+                "create_time": ""     
             }
         ]          
     }

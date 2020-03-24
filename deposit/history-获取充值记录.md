@@ -56,20 +56,20 @@
     "data": {
         "eno":  0,  
         "emsg": "", 
-        "data": {
-            "coin": "coin", 
-            "history": [ 
-                {
-                    "id": 12,              
-                    "subuserid": "用户自定义",  
-                    "chain": "chain",        
-                    "addr": "",      
-                    "txid": "",      
-                    "amount": 10,          
-                    "balance": 20          
-                }
-            ]
-        }
+        "data": [
+            {
+                "id": 12,                
+                "subuserid": "1",       
+                "chain": "eth",               
+                "coin": "usdt",
+                "from_addr": "xxxxxx",               
+                "addr": "xxxxxx",            
+                "txid": "xxxxxx",            
+                "amount": 10,                 
+                "balance": 20,                
+                "time": "2019-09-25 10:00:00"       
+            }
+        ]
     }
 }
 ```

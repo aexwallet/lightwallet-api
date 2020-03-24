@@ -34,6 +34,7 @@
         "addr": "",  
         "amount": 10,  
         "memo": "1234",
+        "attach_id": "1",
         "sign": "xxxxxxxx"   
     }
 }
@@ -55,11 +56,16 @@
 |addr                  |string |提币到哪个地址                                                   |
 |amount                |float  |提币数量                                                        |
 |amount_sent           |float  |实际发送的提币数量                                                |
+|sub_balance           |float  |提币扣减数量                                                |
 |memo                  |string |提币备注，比如用户ID之类的，可以是任意内容                           |
 |status                |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消      |
+|status_desc           |string |提币状态说明                                                    |
 |txid                  |string |链上的交易ID                                                   |
+|attch_id              |int    |用户附加ID                                                     |
 |fee_coin              |string |手续费币种                                                     |
 |fee_amount            |float  |手续费数量                                                     |
+|miner_coin            |string |矿工费币种                                                     |
+|miner_amount          |float  |矿工费数量                                                     |
 |create_time           |string |订单创建时间                                                   |
 
 ```json
@@ -71,19 +77,25 @@
         "eno":  0,  
         "emsg": "", 
         "data": {
-            "id": 0,               
-            "subuserid": "",  
-            "chain": "",         
-            "coin": "",         
-            "addr": "",     
+            "id": 23,     
+            "subuserid": "1", 
+            "chain": "eth",         
+            "coin": "usdt",  
+            "from_addr":"xxxxxx",       
+            "addr": "xxxxxx",     
             "amount": 10,           
-            "amount_sent": 10,       
-            "memo": "",          
+            "amount_sent": 9,       
+            "sub_balance": 9,       
+            "memo": "123",          
             "status": 0,            
-            "txid": "",    
-            "fee_coin": "",         
-            "fee_amount": 0,        
-            "create_time":  ""      
+            "status_desc": "",      
+            "txid": "",                
+            "fee_coin": "",            
+            "fee_amount": 0,          
+            "attch_id": 124,      
+            "miner_coin": "",            
+            "miner_amount": 0,          
+            "create_time": ""     
         }
     }
 }
