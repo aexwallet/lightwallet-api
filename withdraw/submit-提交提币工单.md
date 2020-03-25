@@ -14,6 +14,7 @@
 |addr     |int    |提币目标地址                                                          |
 |amount   |float  |提币数量                                                             |
 |memo     |string |提币备注，比如用户ID之类的，可以是任意内容                                |
+|attach_id|intv   |附加ID，用于用戶确认订单使用的                                          |
 |sign     |string |提币请求签名, md5("appid_salt_userid_timestamp_addr_memo")           |
 
 
@@ -67,7 +68,7 @@
 |fee_amount            |float  |手续费数量                                                     |
 |miner_coin            |string |矿工费币种                                                     |
 |miner_amount          |float  |矿工费数量                                                     |
-|create_time           |string |订单创建时间                                                   |
+|time                  |string |订单创建时间                                                   |
 
 ```json
 字段值参考上表
@@ -96,7 +97,7 @@
             "attch_id": 124,      
             "miner_coin": "",            
             "miner_amount": 0,          
-            "create_time": ""     
+            "time": ""     
         }
     }
 }

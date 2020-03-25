@@ -8,6 +8,7 @@
 |cryptype   |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0 | 
 |token      |string |md5("appid_salt_userid_timestamp")                     |
 |timestamp  |int    |时间戳,单位秒                                             |
+|chain      |string | 主链                                                   |
 |coin       |string |币名                                                    |
 |withdrawid |int    |提币订单ID                                               |
 
@@ -22,6 +23,7 @@
             "token": "",  
             "timestamp": 1574151978    
         },
+        "chain":"eth",
         "coin": "eth",  
         "withdrawid": 1 
     }
@@ -53,7 +55,7 @@
 |fee_amount            |float  |手续费数量                                                     |
 |miner_coin            |string |矿工费币种                                                     |
 |miner_amount          |float  |矿工费数量                                                     |
-|create_time           |string |订单创建时间                                                   |
+|time           |string |订单创建时间                                                   |
 
 
 ```json
@@ -83,7 +85,7 @@
             "attch_id": 124,      
             "miner_coin": "",            
             "miner_amount": 0,          
-            "create_time": ""           
+            "time": ""           
         }
     }
 }
