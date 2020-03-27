@@ -36,21 +36,21 @@
 
 **正常响应：**
 
-|参数      |类型   |说明                                                                         |  
-| --      |--     | --                                                                         |
-|cryptype              |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0         |   
-|eno                   |int    |0是正常，非0对应下面错误返回列表中的错误码                            | 
-|emsg                  |string |eno非0时对应下面错误返回列表中的错误描述                             |
-|id                    |int    |内部充值序号                                                     |
-|subuserid             |string |调用端子账号，字符串，平台不管其含义                                 |
-|chain                 |string |哪条主链上充值进来的                                              |
-|coin                  |string |币名                                                            |
-|from_addr             |string |发送地址                                                        |
-|addr                  |string |接收     地址                                                   |
-|txid                  |string |交易ID                                                         |
-|amount                |float  |充值数量                                                        |
-|balance               |float  |充值后余额                                                      |
-|time                  |string |充值时间                                                        |
+|参数      |类型   |说明                                                             |  
+| --      |--     | --                                                             |
+|cryptype  |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0         |   
+|eno       |int    |0是正常，非0对应下面错误返回列表中的错误码                            | 
+|emsg      |string |eno非0时对应下面错误返回列表中的错误描述                             |
+|id        |int    |内部序号                                                     |
+|subuserid |string |调用端子账号，字符串，平台不管其含义                                 |
+|chain     |string |主链                                                         |
+|coin      |string |币名                                                            |
+|from_addr |string |发送地址                                                        |
+|addr      |string |接收地址                                                        |
+|txid      |string |交易ID                                                         |
+|amount    |float  |充值数量                                                        |
+|balance   |float  |充值后余额                                                      |
+|time      |string |充值时间                                                        |
 
 ```json
 字段值参考上表

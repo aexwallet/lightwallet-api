@@ -14,7 +14,7 @@
 |addr     |int    |提币目标地址                                                          |
 |amount   |float  |提币数量                                                             |
 |memo     |string |提币备注，比如用户ID之类的，可以是任意内容                                |
-|attach_id|intv   |附加ID，用于用戶确认订单使用的                                          |
+|user_tags|string |用户标签，可用于提币异常时确定订单是否已存在                              |
 |sign     |string |提币请求签名, md5("appid_salt_userid_timestamp_addr_memo")           |
 
 
@@ -47,28 +47,28 @@
 
 |参数      |类型   |说明                                                                         |  
 | --      |--     | --                                                                         |
-|cryptype              |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0         |   
-|eno                   |int    |0是正常，非0对应下面错误返回列表中的错误码                            | 
-|emsg                  |string |eno非0时对应下面错误返回列表中的错误描述                             |
-|id                    |int    |内部充值序号                                                     |
-|subuserid             |string |调用端子账号，字符串，平台不管其含义                                 |
-|chain                 |string |哪条主链上充值进来的                                              |
-|coin                  |string |币名                                                            |
-|from_addr             |string |发送地址                                                        |
-|addr                  |string |充值到哪个地址                                                   |
-|amount                |float  |充值数量                                                        |
-|amount_sent           |float  |实际发送的提币数量=(amount-fee_amount)                           |
-|sub_balance           |float  |扣减余额数量                                                    |
-|memo                  |string |提币备注，比如用户ID之类的，可以是任意内容                           |
-|status                |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消      |
-|status_desc           |string |提币状态说明                                                    |
-|txid                  |string |链上的交易ID                                                   |
-|attch_id              |int    |附加ID                                                        |
-|fee_coin              |string |手续费币种                                                     |
-|fee_amount            |float  |手续费数量                                                     |
-|miner_coin            |string |矿工费币种                                                     |
-|miner_amount          |float  |矿工费数量                                                     |
-|time                  |string |订单创建时间                                                   |
+|cryptype          |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0         |   
+|eno               |int    |0是正常，非0对应下面错误返回列表中的错误码                            | 
+|emsg              |string |eno非0时对应下面错误返回列表中的错误描述                             |
+|id                |int    |内部序号                                              |
+|subuserid         |string |调用端子账号，字符串，平台不管其含义                          |
+|chain             |string |主链                                                    |
+|coin              |string |币名                                                    |
+|from_addr         |string |发送地址(发送方)                                          |
+|addr              |string |提币地址(接收方)                                           |
+|amount            |float  |提币数量                                                  |
+|amount_sent       |float  |实际发币数量                                               |
+|sub_balance       |float  |余额扣减数量                                               |
+|memo              |string |提币备注，可以是任意内容，一般备注用户id                       |
+|status            |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消 |
+|status_desc       |string |提币状态文字说明                                            |
+|txid              |string |交易ID                                                    |
+|user_tags         |string |用户标签，异常时确定订单使用                                  |
+|fee_coin          |string |手续费币种                                                 |
+|fee_amount        |float  |手续费数量                                                 |
+|miner_coin        |string |矿工费币种                                                 |
+|miner_amount      |float  |矿工费数量                                                 |
+|time              |string |订单创建时间                                               |
 
 ```json
 字段值参考上表
