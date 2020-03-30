@@ -14,8 +14,8 @@
 |addr     |int    |提币目标地址                                                          |
 |amount   |float  |提币数量                                                             |
 |memo     |string |提币备注，主要用于备注用户ID（某些加密货币依赖备注进行入账,格式具体由接收方确定）|
-|user_tags|string |用户标签，用于提币异常时确定订单是否已存在，保证不重复调用该接口               |
-|sign     |string |提币请求签名, md5("appid_salt_userid_timestamp_addr_memo")           |
+|usertags|string |用户标签，用于提币异常时确定订单是否已存在，保证不重复调用该接口               |
+|sign     |string |签名, md5("appid_salt_userid_timestamp_addr_memo_usertags"),如果memo、usertags字段为空，则字段前的下划线也要去掉  |
 
 
 ```json
@@ -35,7 +35,7 @@
         "addr": "",  
         "amount": 10,  
         "memo": "1234",
-        "user_tags": "1",
+        "usertags": "1",
         "sign": "xxxxxxxx"   
     }
 }
@@ -63,7 +63,7 @@
 |status            |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消 |
 |status_desc       |string |提币状态文字说明                                            |
 |txid              |string |交易ID                                                    |
-|user_tags         |string |用户标签，异常时确定订单使用,这里只是回传                       |
+|usertags          |string |用户标签，异常时确定订单使用,这里只是回传                       |
 |fee_coin          |string |手续费币种                                                 |
 |fee_amount        |float  |手续费数量                                                 |
 |miner_coin        |string |矿工费币种                                                 |
@@ -94,7 +94,7 @@
             "txid": "",                
             "fee_coin": "",            
             "fee_amount": 0,          
-            "user_tags": "",      
+            "usertags": "",      
             "miner_coin": "",            
             "miner_amount": 0,          
             "time": ""     

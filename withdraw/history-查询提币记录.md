@@ -54,7 +54,7 @@
 |status            |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消 |
 |status_desc       |string |提币状态文字说明                                            |
 |txid              |string |交易ID                                                    |
-|user_tags         |string |用户标签，异常时确定订单使用,回传                              |
+|usertags          |string |用户标签，异常时确定订单使用,回传                              |
 |fee_coin          |string |手续费币种                                                 |
 |fee_amount        |float  |手续费数量                                                 |
 |miner_coin        |string |矿工费币种                                                 |
@@ -87,7 +87,7 @@
                 "txid": "",                
                 "fee_coin": "",            
                 "fee_amount": 0,          
-                "user_tags": "",      
+                "usertags": "",      
                 "miner_coin": "",            
                 "miner_amount": 0,          
                 "time": ""     
