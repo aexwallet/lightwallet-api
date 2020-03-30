@@ -13,8 +13,8 @@
 |coin     |string |币名                                                                |
 |addr     |int    |提币目标地址                                                          |
 |amount   |float  |提币数量                                                             |
-|memo     |string |提币备注，比如用户ID之类的，可以是任意内容                                |
-|user_tags|string |用户标签，可用于提币异常时确定订单是否已存在                              |
+|memo     |string |提币备注，主要用于备注用户ID（某些加密货币依赖备注进行入账,格式具体由接收方确定）|
+|user_tags|string |用户标签，用于提币异常时确定订单是否已存在，保证不重复调用该接口               |
 |sign     |string |提币请求签名, md5("appid_salt_userid_timestamp_addr_memo")           |
 
 
@@ -35,13 +35,13 @@
         "addr": "",  
         "amount": 10,  
         "memo": "1234",
-        "attach_id": "1",
+        "user_tags": "1",
         "sign": "xxxxxxxx"   
     }
 }
 ```
 
-**注意： 扣减金额是提币数量(amount) + (手续费数量)fee_amount**
+**注意： 扣减金额数量是 提币数量(amount) + (手续费数量)fee_amount**
 
 **正常响应：**
 
@@ -63,7 +63,7 @@
 |status            |int    |提币状态: 1=准备发送,2=发送中,3=发送成功,4=发送失败,5=发送已取消 |
 |status_desc       |string |提币状态文字说明                                            |
 |txid              |string |交易ID                                                    |
-|user_tags         |string |用户标签，异常时确定订单使用                                  |
+|user_tags         |string |用户标签，异常时确定订单使用,这里只是回传                       |
 |fee_coin          |string |手续费币种                                                 |
 |fee_amount        |float  |手续费数量                                                 |
 |miner_coin        |string |矿工费币种                                                 |
@@ -94,7 +94,7 @@
             "txid": "",                
             "fee_coin": "",            
             "fee_amount": 0,          
-            "attch_id": 124,      
+            "user_tags": "",      
             "miner_coin": "",            
             "miner_amount": 0,          
             "time": ""     
