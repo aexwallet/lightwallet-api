@@ -29,21 +29,21 @@
 |参数      |类型   |说明                                                                    |  
 | --      |--     | --                                                                    |
 |cryptype              |int    |0=data未加密(json格式)，1=data已加密(加密字符串)，当前只支持0    |   
-|eno                   |int    |0是正常，非0对应下面错误返回列表中的错误码                       | 
-|emsg                  |string |eno非0时对应下面错误返回列表中的错误描述                        |
+|eno                   |int    |0是正常，其他错误码参见错误响应一栏                             | 
+|emsg                  |string |错误描述信息                                                |
 |chain                 |string |链名                                                      |
 |coin                  |string |币名                                                      |
-|coin_precision        |int    |币的精度,也就是该币支持多少位小数                              |
+|coin_precision        |int    |币的精度                                                   |
 |min_deposit_amount    |float  |最小充值数量                                                |
 |min_withdraw_amount   |float  |最小提币数量                                                |
 |deposit_enabled       |int    |充值是否启用: 1=启用,0=未启用                                 |
 |withdraw_enabled      |int    |提币是否启用: 1=启用,0=未启用                                 |
 |deposit_confirm_count |int    |充值入账确认数                                               |
-|fee_type              |int    |手续费类型: 0=固定数量,1=费率,2=混合(withdraw_amt*rate+amount) |
+|fee_type              |int    |手续费类型: 0=固定数量,1=提币数量 * 比率,2=0、1类型混合          |
 |fee_coin              |string |手续费币种                                                  |
 |fee_amount            |float  |固定手续费数量                                               |
 |fee_rate              |float  |手续费率                                                    |
-|need_memo             |int    |充值是否需要备注: 1=充值需要备注,0=充值不需要备注                 |
+|need_memo             |int    |充值是否需要备注: 1=充值需要备注,0=充值不需要备注                |
 
 ```json
 字段值参考上表
@@ -74,27 +74,27 @@
 }
 ```
 
-**错误响应：**
+**错误响应：(emsg中带有括号表示可能变动部分)**
 
 
-|eno    |emsg                                |
-| --    | --                                 |
-|1      |system error (number)               |
-|2      |invalid json request                |
-|3      |lack field: appid                   |
-|4      |lack field: cryptype                |
-|5      |lack field: data                    |
-|6      |cryptype is invalid                 |
-|1001   |lack field: auth                    |
-|3001   |lack field: token                   |
-|4001   |lack field: pubkey                  |
-|5001   |lack field: timestamp               |
-|6001   |appid not found                     |
-|7001   |timestamp difference over 30 seconds|
-|8001   |invalid appid                       |
-|9001   |not trusted ip addr                 |
-|10001  |token verifiy failed                |
-|11001  |appid is disabled                   |
+|eno    |emsg                                |  description    |
+| --    | --                                 |                 |
+|1      |system error (number)               |  系统内部错误     |
+|2      |invalid json request                |  不是有效的json请求|
+|3      |lack field: appid                   |  缺少appid字段   |
+|4      |lack field: cryptype                |  缺少cryptype字段|
+|5      |lack field: data                    |  缺少data字段    |
+|6      |cryptype is invalid                 |  非法的cryptype字段|
+|1001   |lack field: auth                    |  缺少auth字段    |
+|3001   |lack field: token                   |  缺少token字段   |
+|4001   |lack field: pubkey                  |  缺少pubkey字段  |
+|5001   |lack field: timestamp               |  缺少timestamp字段|
+|6001   |appid not found                     |  appid未找到    |
+|7001   |timestamp difference over 30 seconds|  请求时间间隔超过30秒|
+|8001   |appid is invalid                    |  非法的appid    |
+|9001   |(name) not in ip whitelist          |  不受信任的IP地址 |
+|10001  |token verifiy failed                |  token验证失败   |
+|11001  |appid is disabled                   |  appid未启用     |
 
 ```json
 字段值参考上表

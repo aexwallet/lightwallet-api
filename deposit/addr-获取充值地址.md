@@ -10,7 +10,7 @@
 |timestamp|int    |时间戳,单位秒                                             |
 |chain    |string |主链                                                    |
 |coin     |string |币名                                                    |
-|subuserid|string |调用端子账号，字符串，平台不管其含义                          |
+|subuserid|string |调用端子账号，字符串，平台不管其含义                         |
 
 ```json
 字段值参考上表
@@ -68,37 +68,37 @@
 }
 ```
 
-**错误返回：**
+**错误响应：(emsg中带有括号表示可能变动部分)**
 
 
-|eno    |emsg                                |
-| --    | --                                 |
-|1      |system error (number)               |
-|2      |invalid json request                |
-|3      |lack field: appid                   |
-|4      |lack field: cryptype                |
-|5      |lack field: data                    |
-|6      |cryptype is invalid                 |
-|1001   |lack field: auth                    |
-|3001   |lack field: token                   |
-|4001   |lack field: pubkey                  |
-|5001   |lack field: timestamp               |
-|6001   |appid not found                     |
-|7001   |timestamp difference over 30 seconds|
-|8001   |invalid appid                       |
-|9001   |not trusted ip addr                 |
-|10001  |token verifiy failed                |
-|11001  |appid is disabled                   |
-|1002   |invalid request format              |
-|2002   |field type error                    |
-|3002   |invalid field                       |
-|4002   |invalid request format              |
-|5002   |invalid request format              |
-|6002   |(xxx) not found                     |
-|7002   |field cannot be empty               |
-|8002   |(xxx) not supported coin            |
-|9002   |(xxx) not supported chain           |
-|10002  |invalid field value                 |
+|eno    |emsg                                |  description    |
+| --    | --                                 |                 |
+|1      |system error (number)               |  系统内部错误     |
+|2      |invalid json request                |  不是有效的json请求|
+|3      |lack field: appid                   |  缺少appid字段   |
+|4      |lack field: cryptype                |  缺少cryptype字段|
+|5      |lack field: data                    |  缺少data字段    |
+|6      |cryptype is invalid                 |  非法的cryptype字段|
+|1001   |lack field: auth                    |  缺少auth字段    |
+|3001   |lack field: token                   |  缺少token字段   |
+|4001   |lack field: pubkey                  |  缺少pubkey字段  |
+|5001   |lack field: timestamp               |  缺少timestamp字段|
+|6001   |appid not found                     |  appid未找到    |
+|7001   |timestamp difference over 30 seconds|  请求时间间隔超过30秒|
+|8001   |appid is invalid                    |  非法的appid    |
+|9001   |(name) not in ip whitelist          |  不受信任的IP地址 |
+|10001  |token verifiy failed                |  token验证失败   |
+|11001  |appid is disabled                   |  appid未启用     |
+|1002   |(name) only support 'list' rule     |  规则定义错误     |
+|2002   |(name) not string                   |  类型不是一个字符串 |
+|3002   |invalid string                      |  非法的字符串     |
+|4002   |function no implement               |  功能未实现       |
+|5002   |function not support                |  功能不支持       |
+|6002   |(name) not a list                   |  不是列表类型     |
+|7002   |(name) cannot be empty              |  字段不能为空     |
+|8002   |(name) not supported coin           |  不支持的币种     |
+|9002   |(name) not supported chain          |  不支持的链      |
+|10002  |(name) not positive int             |  不是一个正整数   | 
 
 ```json
 字段值参考上表
