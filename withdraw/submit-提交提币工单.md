@@ -106,7 +106,7 @@
 **错误响应：(emsg中带有括号表示可能变动部分)**
 
 |eno    |emsg                                |  description    |
-| --    | --                                 |                 |
+| --    | --                                 |     --          |
 |1      |system error (number)               |  系统内部错误     |
 |2      |invalid json request                |  不是有效的json请求|
 |3      |lack field: appid                   |  缺少appid字段   |

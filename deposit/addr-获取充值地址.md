@@ -72,7 +72,7 @@
 
 
 |eno    |emsg                                |  description    |
-| --    | --                                 |                 |
+| --    | --                                 |    --           |
 |1      |system error (number)               |  系统内部错误     |
 |2      |invalid json request                |  不是有效的json请求|
 |3      |lack field: appid                   |  缺少appid字段   |
