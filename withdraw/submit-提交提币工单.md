@@ -113,6 +113,9 @@
 |4      |lack field: cryptype                |  缺少cryptype字段|
 |5      |lack field: data                    |  缺少data字段    |
 |6      |cryptype is invalid                 |  非法的cryptype字段|
+|7      |(error message)                     |  请求内容和币种信息不匹配|
+|8      |(error message)                     |  请求数量不合法   |
+|10     |frequency byond limit               |  频率超过限制     |
 |1001   |lack field: auth                    |  缺少auth字段    |
 |3001   |lack field: token                   |  缺少token字段   |
 |4001   |lack field: pubkey                  |  缺少pubkey字段  |
