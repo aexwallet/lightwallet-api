@@ -11,7 +11,7 @@
 |subuserid|string |调用端子账号，字符串，平台不管其含义                                     |
 |chain    |string |主链                                                                |
 |coin     |string |币名                                                                |
-|addr     |int    |提币目标地址                                                          |
+|addr     |string |提币目标地址                                                          |
 |amount   |float  |提币数量                                                             |
 |memo     |string |提币备注，主要用于备注用户ID（某些加密货币依赖备注进行入账,格式具体由接收方确定）|
 |usertags|string |用户标签，用于提币异常时确定订单是否已存在，保证不重复调用该接口               |
